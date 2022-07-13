@@ -9,9 +9,6 @@ Vue.createApp({
     }
   },
   methods: {
-    inputHandler(e)  {
-      this.inputValue = e.target.value
-    },
     submitHandler() {
       if(this.inputValue !== '') {
       this.notes.push(this.inputValue);
@@ -35,7 +32,6 @@ Vue.createApp({
       if(value.length === 10){
         this.inputValue = ""
       }
-      console.log(value)
     }
   }
   
