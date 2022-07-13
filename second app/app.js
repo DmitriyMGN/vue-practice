@@ -16,8 +16,8 @@ Vue.createApp({
       this.notes.push(this.inputValue);
       this.inputValue = "";
     },
-    deleteNote() {
-      
+    deleteNote(index) {
+      this.notes.splice(index, 1)
     }
   }
   

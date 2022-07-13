@@ -23,9 +23,9 @@
         <button class="btn primary" v-on:click="submitHandler" >Добавить</button>
         <hr />
         <ul class="list">
-          <li class="list-item" v-for="note of notes">
-            {{ note }}
-            <button class="btn danger" v-on:click="deleteNote">Удалить</button>
+          <li class="list-item" v-for="(note, index) in notes">
+            {{ note }} 
+            <button class="btn danger" v-on:click="deleteNote(index)">Удалить</button>
           </li>
         </ul>
         </div>
