@@ -15,19 +15,21 @@
         <div class="form-control">
           <input 
           type="text"
-          v-bind:placeholder="myPlaceHolder"
-          v-bind:value="inputValue"
-          v-on:input="inputHandler"
+          :placeholder="myPlaceHolder"
+          :value="inputValue"
+          @input="inputHandler"
+          @keypress.enter="submitHandler"
           />
         </div>
         <button class="btn primary" v-on:click="submitHandler" >Добавить</button>
         <hr />
-        <ul class="list">
+        <ul class="list" v-if="notes.length !== 0">
           <li class="list-item" v-for="(note, index) in notes">
-            {{ note }} 
-            <button class="btn danger" v-on:click="deleteNote(index)">Удалить</button>
+            {{ toUpperCase(note) }} 
+            <button class="btn danger" @click="deleteNote(index)">Удалить</button>
           </li>
         </ul>
+        <div v-else>Заметок нет, добавьте новую</div>
         </div>
       </div>
 
