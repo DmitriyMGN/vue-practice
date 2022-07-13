@@ -27,12 +27,16 @@
 
       <div v-html="myHtml"></div>
       <ul class="list" v-if="items.length">
-        <li 
+        <li
         class="list-item" 
-        v-for="(item,index) in items"
+        v-for="(item,index) in eventItems"
         @click="items.splice(index,1)"
+        :key="item"
         >
-          {{ item }}
+         <strong>{{ item }}</strong>&nbsp;
+         <input 
+         @click.stop
+         >
         </li>
       </ul>
       <h3 v-show="items.length === 0">Элементов нет</h3>
